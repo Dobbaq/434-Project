@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Recipes</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <script>
+            function clearTheGuesses() {
+                document.getElementById("guess01").innerHTML = "";
+                document.getElementById("guess02").innerHTML = "";
+            }
+
+            function makeTheGuesses() {
+                prefix = "My hat color is ";
+                postfix = ".";
+                theSelectElement = document.getElementById("player02");
+                document.getElementById("guess01").innerHTML =
+                    prefix +
+                    theSelectElement.options[theSelectElement.selectedIndex].text +
+                    postfix;
+
+                document.getElementById("guess02").innerHTML = prefix;
+                if (document.getElementById("player01red").checked) {
+                    document.getElementById("guess02").innerHTML += "Blue";
+                } else {
+                    document.getElementById("guess02").innerHTML += "Red";
+                }
+                document.getElementById("guess02").innerHTML += postfix;
+            }
+        </script>
+        <script
+            data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
+    </head>
+
+    <body>
+        <h1 style="font-family:Forum;">Recipes</h1>
+        <form class="example" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+        </form>
+
+        <div class="inventoryScroller">
+            <label for="Invetory">Your Inventory: </label>
+            <select name="Inventory" multiple="multiple" onfocus='this.size=3;' onblur='this.size=1; this.blur();'>
+                <option value="poop">Poop</option>
+                <option value="shit">Shit</option>
+                <option value="lole">lole</option>
+                <option value="lole2">lole2</option>
+            </select>
+        </div> 
+
+        <button onclick="myFunction()">Generate Recipes</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "I dont work :)";
+                var thisOptionValue = [];
+                $('select[name="Inventory"]').each(function () { thisOptionValue = $(this).val(); }); 
+            }
+        </script>
+    </body>
+
+</html>
