@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:400,500,600|Forum:400");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.fruitpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 13%;
+    top: 16%;
+    height:200px;
+    width: 250px
+
+}
+
+.meatpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 62%;
+    top: 16%;
+    height:200px;
+    width: 250px
+}
+
+.bakerypic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 63%;
+    top: 42%;
+    height:200px;
+    width: 250px
+}
+
+.oilpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 13%;
+    top: 42%;
+    height:200px;
+    width: 250px
+}
+
+.dairypic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 11%;
+    top: 67%;
+    height:200px;
+    width: 250px
+}
+
+.beveragespic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 63%;
+    top: 67%;
+    height:200px;
+    width: 250px
+}
+
+
+.fruit {
+    display: flex;
+    background-color: white;
+    opacity:0.4;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 5%;
+    top: 15%;
+    font-size: 80px;
+    height: 350px;
+    width: 400px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.meatandfish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    opacity: 0.4;
+    position: absolute;
+    margin: auto;
+    left:55%;
+    top: 15%;
+    height: 350px;
+    width: 400px;
+    font-size: 80px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.bakery {
+    display: flex;
+    opacity: 0.4;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 40%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.oils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 40%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.dairy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 65%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+.beverages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 65%;
+    height: 350px;
+    width: 400px;
+    font-size: 70px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+
+
+h1 {
+    font-size: 800%;
+    text-align: center;
+  }
+  
+  body {
+    background: #A9D7CD;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  
+  
+  /* button {
+    position: absolute;
+    margin: auto;
+    left: 25%;
+    top: 60%;
+    font-size: 345%;
+    background: #68dec4;
+  } */
+/*   
+  p {
+    position: absolute;
+    margin: auto;
+    left: 30%;
+    top: 64%;
+    font-size: 350%;
+  } */
