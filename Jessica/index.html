@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shopping List</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script>
+    </script>
+    <script
+        data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
+</head>
+
+<body>
+    <h1 style="font-family:Forum;">Shopping List</h1>
+
+    <div>
+        <form>  
+            <b> Select a category: </b>  
+            <select id = "myList" onchange = "chooseCat()" >  
+                <option>  </option>  
+                <option> Fruits </option>  
+                <option> Vegetables </option>
+                <option> Dairy </option>  
+                <option> Meats </option> 
+                <option> Other </option>  
+            </select>  
+
+            <p>
+                The value of the option selected is:
+                <span class="output"></span>
+            </p>
+
+        </form>
+    </div>
+
+    <div id="nav"></div>
+
+    <div>
+        <ul id = all_categories>
+        <li>Fruits</li>
+            <ul id="listFruit"> </ul>
+        <li>Vegetables</li>
+            <ul id="listVeggies"> </ul>
+        <li>Dairy</li>
+            <ul id="listDairy"> </ul>
+        <li>Meats</li>
+            <ul id="listMeat"> </ul>
+        <li>Other</li>
+            <ul id="listOther"> </ul>
+        </ul>
+    </div>    
+
+    <input type="text" id="candidate"/>
+    <button onclick="addItem()">add item</button>
+    <button onclick="removeItem()">remove item</button>
+
+
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "I dont work :)";
+            var thisOptionValue = [];
+            $('select[name="Inventory"]').each(function () { thisOptionValue = $(this).val(); });
+        }
+
+        // var stringArray = ["Fruits","Dairy","Meat"];     
+
+        function addItem(){
+            if (lst_src == 'listVeggies') {
+                console.log("VEGGIE")
+            }
+            console.log(lst_src)
+            var ul = document.getElementById(lst_src);
+            var candidate = document.getElementById("candidate");
+            var li = document.createElement("li");
+            li.setAttribute('id',candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            ul.appendChild(li);
+        }
+
+        function removeItem(){
+            var ul = document.getElementById("lst_src");
+            var candidate = document.getElementById("candidate");
+            var item = document.getElementById(candidate.value);
+            ul.removeChild(item);
+        }
+
+        function chooseCat() {  
+            var mylist = document.getElementById("myList");  
+
+           /* var fruit = document.getElementById("list_fruit");
+            var veggie = document.getElementById("Vegetables");
+            var dairy = document.getElementById("Dairy");
+            var meat = document.getElementById("Meat");
+            var other = document.getElementById("Other"); */
+            // document.getElementById("category").value = mylist.options[mylist.selectedIndex].text;
+            selectElement = 
+                    document.querySelector('#myList');
+            // output = document.getElementById("category").value;
+            output = selectElement.value;
+
+            if (output == 'Fruits') {
+                lst_src = 'listFruit'
+             //   console.log(lst_src)
+               // document.getElementById('listFruit').setAttribute('id', 'lst_src')
+            } else if (output == 'Vegetables') {
+                lst_src = 'listVeggies'
+             //   console.log(lst_src)
+            } else if (output == 'Dairy') {
+                lst_src = 'listDairy'
+              //  console.log(lst_src)
+            } else if (output == 'Meats') {
+                lst_src = 'listMeat'
+              //  console.log(lst_src)
+            } else  {
+                lst_src = 'listOther'
+             //   console.log(lst_src)
+            }
+
+            // document.getElementById('lst_src').setAttribute('id', 'listFruit')
+            document.querySelector('.output').textContent = output;
+            
+            // document.writeln(mylist.options[mylist.selectedIndex].text)    
+        }  
+
+    </script>
+</body>
+
+</html>
