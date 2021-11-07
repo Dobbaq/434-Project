@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:400,500,600|Forum:400");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -19,14 +19,66 @@ h1 {
     height: 100vh;
   }
 
-form.example input[type=text] {
+  form {
     position: absolute;
-    top: 15%;
-    left: 50%;
-    font-size: 400%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    border: 2px solid black;
-    background: #adadad;
+    width: 50%;
+    height: 15%;
+    top: 20%;
+    left: 25%;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border: 6px solid #A9D7CD;
+    background: white;
+  }
+  
+  input {
+    all: unset;
+    font-size: 250%;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+  }
+
+  button.search {
+    all: unset;
+    cursor: pointer;
+    width: 45px;
+    height: 100%;
+    top: 20%;
+  }
+
+  ::-webkit-input-placeholder {
+    color: black;
+    opacity: 0.7;
+  }
+  
+  :-ms-input-placeholder {
+    color: black;
+    opacity: 0.7;
+  }
+  
+  ::-ms-input-placeholder {
+    color: black;
+    opacity: 0.7;
+  }
+  
+  ::placeholder {
+    color: black;
+    opacity: 0.7;
+  }
+
+  svg {
+    color: black;
+    fill: currentColor;
+    width: 50px;
+    height: 75px;
+    opacity: 0.7;
+    padding: 5px;
   }
 
