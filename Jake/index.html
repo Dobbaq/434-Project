@@ -4,35 +4,60 @@
 <head>
     <title>Recipes</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script>
-    </script>
-    <script
-        data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
 </head>
 
 <body>
-    <h1 style="font-family:Forum;">Recipes</h1>
+    <h1 style="font-family:Inter;">Recipes</h1>
     <form class="example" action="action_page.php">
         <input type="text" placeholder="Search.." name="search">
     </form>
-
+    <div id="rectangle"></div>
     <div class="inventoryScroller">
-        <label for="Invetory">Your Inventory: </label>
-        <select name="Inventory" multiple="multiple" onfocus='this.size=3;' onblur='this.size=1; this.blur();'>
-            <option value="Op1">Op1</option>
-            <option value="Op2">Op2</option>
-            <option value="Op3">Op3</option>
-            <option value="Op4">Op4</option>
-        </select>
+        <table>
+            <tr>
+                <td>
+                    <label>Inventory:</label>
+                </td>
+                <td>
+                    <select id="rec_mode" multiple = "multiple" size="3">
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <script>
+            var myobject = {
+                ValueA: 'Mozzerela',
+                ValueB: 'Tomato Sauce',
+                ValueC: 'Dough',
+                ValueD: 'Banana'
+            };
+            var selectBox = document.getElementById("rec_mode");
+            for (index in myobject) {
+                selectBox.options[selectBox.options.length] = new Option(myobject[index], index);
+            }
+        </script>
     </div>
-
     <button onclick="myFunction()">Generate Recipes</button>
     <p id="demo"></p>
     <script>
         function myFunction() {
-            document.getElementById("demo").innerHTML = "I dont work :)";
-            var thisOptionValue = [];
-            $('select[name="Inventory"]').each(function () { thisOptionValue = $(this).val(); });
+            var recipes = {
+                Pizza: ['ValueA', 'ValueB', 'ValueC'],
+                Banana: ['ValueD']
+            };
+            var result = []
+            var options = document.getElementById('rec_mode').selectedOptions;
+            var values = Array.from(options).map(({ value }) => value);
+            for (v in values) {
+                for (index in recipes) {
+                    if (recipes[index].includes(String(values[v]))) {
+                        if(!(result.includes(index))) {
+                            result.push(index);
+                        }     
+                    }
+                }
+            }
+            document.getElementById("demo").innerHTML = (result.join("\r\n"));
         }
     </script>
 </body>
