@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <title>Shopping List</title>
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script>
-    </script>
-    <script
-        data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    
 </head>
 
-<body>
-    <h1 style="font-family:Forum;">Shopping List</h1>
 
-    <div>
+<body>
+    <div class = "content"> 
+    <h1 style="font-family:Inter; font-size: 800%;">Shopping List</h1>
+    <div id="rectangle"></div>
+  
+
+    <div class = "dropdown">
         <form>  
-            <b> Select a category: </b>  
-            <select id = "myList" onchange = "chooseCat()" >  
+            <b style="font-size: 50px; font-style: italic; font-weight: bold; color: rgb(72, 99, 72);"> Select a category: </b>  
+            <select style= "width: 500 px", id = "myList" onchange = "chooseCat()" >  
                 <option>  </option>  
                 <option> Fruits </option>  
                 <option> Vegetables </option>
@@ -25,34 +26,37 @@
                 <option> Other </option>  
             </select>  
 
-            <p>
-                The value of the option selected is:
-                <span class="output"></span>
-            </p>
-
         </form>
     </div>
 
     <div id="nav"></div>
 
+    <div class = "items">
+        <input type="text" id="candidate"/>
+        <button onclick="addItem()" >Add item +</button>
+        <button onclick="removeItem()">Remove item -</button>
+    </div>
+
     <div>
         <ul id = all_categories>
-        <li>Fruits</li>
+        <li style = "font-weight: bold; font-size:300%; color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
+        box-sizing: border-box; padding: 20px; opacity: 0.6;">Fruits</li>
             <ul id="listFruit"> </ul>
-        <li>Vegetables</li>
+        <li style = "font-weight: bold; font-size:300%; color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
+        box-sizing: border-box; padding: 20px;">Vegetables</li>
             <ul id="listVeggies"> </ul>
-        <li>Dairy</li>
+        <li style = "font-weight: bold; font-size:300%;color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
+        box-sizing: border-box; padding: 20px; opacity: 0.6;">Dairy</li>
             <ul id="listDairy"> </ul>
-        <li>Meats</li>
-            <ul id="listMeat"> </ul>
-        <li>Other</li>
+        <li style = "font-weight: bold; font-size:300%;color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
+        box-sizing: border-box; padding: 20px;">Meats</li>
+            <ul id="listMeat" > </ul>
+        <li style = "font-weight: bold; font-size:300%; color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
+        box-sizing: border-box; padding: 20px; opacity: 0.6;" >Other</li>
             <ul id="listOther"> </ul>
         </ul>
-    </div>    
-
-    <input type="text" id="candidate"/>
-    <button onclick="addItem()">add item</button>
-    <button onclick="removeItem()">remove item</button>
+    </div>
+</div>    
 
 
     <p id="demo"></p>
@@ -62,6 +66,11 @@
             var thisOptionValue = [];
             $('select[name="Inventory"]').each(function () { thisOptionValue = $(this).val(); });
         }
+        /* <p id = "test option">
+    The value of the option selected is:
+    <span class="output"></span>
+</p>
+*/
 
         // var stringArray = ["Fruits","Dairy","Meat"];     
 
@@ -73,13 +82,27 @@
             var ul = document.getElementById(lst_src);
             var candidate = document.getElementById("candidate");
             var li = document.createElement("li");
-            li.setAttribute('id',candidate.value);
+            var checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+            checkbox.value = 1;
+            checkbox.style.width = '50px';
+            checkbox.name = "todo[]";
+
+            li.appendChild(checkbox);
+
+            li.style.color = 'black';
+            li.style.fontSize = '40px';
+            
+          //  li.style.paddingTop = '2';
+           // li.style.fontWeight = 'none';
+           // li.setAttribute('id',candidate.value);
             li.appendChild(document.createTextNode(candidate.value));
+           
             ul.appendChild(li);
         }
 
         function removeItem(){
-            var ul = document.getElementById("lst_src");
+            var ul = document.getElementById(lst_src);
             var candidate = document.getElementById("candidate");
             var item = document.getElementById(candidate.value);
             ul.removeChild(item);
@@ -122,8 +145,14 @@
             
             // document.writeln(mylist.options[mylist.selectedIndex].text)    
         }  
-
     </script>
+    <div class="topnav">
+        <a href="/Alex/homepage.html"><img src=images\images\icons8-home-24.png></a>
+        <a href="/Sydney/index.html"><img src=images\images\icons8-fridge-24.png></a>
+        <a href="/Jake/index.html"><img src=images\images\icons8-chef-hat-30.png></a>
+        <a class="active" href="Jessica/index.html"><img src=images\images\icons8-shopping-cart-32.png></a>
+    </div>
+
 </body>
 
 </html>
