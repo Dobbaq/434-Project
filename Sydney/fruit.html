@@ -12,17 +12,20 @@
 </head>
 
 <body>
-    <button class="btn"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
+    <button class="btn" onclick = "window.location.href = 'index.html'"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
     <h1 style="font-family:Inter;">Fruits and Vegetables</h1>
 
-    <form id="form" role="search">
-        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
-        <button class="search"><svg viewBox="0 0 1024 1024">
-            <path class="path1"
-                d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
-            </path>
-        </svg></button>
-    </form>
+    <div class = "search">
+        <form id="form" role="search">
+            <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
+            <button class="search"><svg viewBox="0 0 1024 1024">
+                <path class="path1"
+                    d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                </path>
+            </svg></button>
+        </form>
+    </div>
+    
 
     <div class="inventory">
         <ul id="inventory">
@@ -31,12 +34,14 @@
                 <div class="thumb-desc">
                   <h4>Apples</h4>
                   <p><i>purchased: 2 days ago</i></p>
+                  <p><i>location: fruit basket</i></p>
                 </div>
               </div>
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" readonly/>
+                  <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
               </div>
@@ -47,12 +52,14 @@
                 <div class="thumb-desc">
                     <h4>Bananas</h4>
                     <p><i>purchased: 1 day ago</i></p>
+                    <p><i>location: fruit basket</i></p>
                 </div>
               </div>
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" />
+                  <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
               </div>
@@ -63,12 +70,14 @@
                 <div class="thumb-desc">
                     <h4>Grapes</h4>
                     <p><i>purchased: 10 days ago</i></p>
+                    <p><i>location: fridge</i></p>
                 </div>
               </div>
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" />
+                  <span class ="infotext"> bag(s) </span>
                   <button action="add">+</button>
                 </div>
               </div>
@@ -79,12 +88,14 @@
                 <div class="thumb-desc">
                     <h4>Peaches</h4>
                     <p><i>purchased: 5 days ago</i></p>
+                    <p><i>location: fruit basket</i></p>
                 </div>
               </div>
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" />
+                  <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
               </div>
@@ -95,18 +106,106 @@
                 <div class="thumb-desc">
                     <h4>Spinach</h4>
                     <p><i>purchased: 1 day ago</i></p>
+                    <p><i>location: fridge</i></p>
                 </div>
               </div>
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" />
+                  <span class ="infotext"> bag(s) </span>
                   <button action="add">+</button>
                 </div>
               </div>
             </li>
           </ul>
 
+          <div class="addItems">
+              <!-- <form action ="/" class="form-container">
+                <h1>Add New Item</h1>
+                <label for="item"><b>Item Name</b></label>
+                <input type="text" id="myInput" placeholder="Item Name">
+
+                <label for="date"><b>Purchased:</b></label>
+                <input type="text" id="purchased" placeholder ="When Item was Purchased">
+
+                <label for="quantity"><b>Quantity</b></label>
+                <input type="text" id="quantity" placeholder ="Quantity of Item">
+
+                <label for="placed"><b>Location in Kitchen</b></label>
+                <input type="text" id="location" placeholder = "Location of Item">
+
+                <button type="submit" onclick="newElement()" class="addBtn">Add Item</button>
+            </form> -->
+
+
+
+                <input type="text" id="myInput" placeholder="Item Name">
+                <input type="text" id="purchased" placeholder ="When Item was Purchased">
+                <input type="text" id="quantity" placeholder ="Quantity of Item">
+                <span onclick="newElement()" class="addBtn">Add</span>
+
+
+          </div>
+          
+
+    <script>
+    function newElement() {
+
+        var inputValue = document.getElementById("myInput").value;
+        var purchased = document.getElementById("purchased").value.italics();
+        var quantity = document.getElementById("quantity").value;
+
+        var li = document.createElement("li");
+        li.className = "single-product"
+        var cl1 = document.createElement("div");
+        cl1.className = "cart-product";
+        li.appendChild(cl1);
+
+        var cl2 = document.createElement("div")
+        cl2.className="thumb-desc";
+        cl1.appendChild(cl2);
+
+        var header = document.createElement("h4");
+        header.textContent = inputValue;
+        cl2.appendChild(header);
+
+        var p = document.createElement("p")
+        p.textContent = "purchased: ";
+        p.innerHTML = "<i>purchased: </i>" + purchased;
+        cl2.appendChild(p);
+
+        var p_options= document.createElement("div");
+        p_options.className = "product-options";
+        li.appendChild(p_options);
+
+        var quant= document.createElement("div");
+        quant.className = "item-count";
+        p_options.appendChild(quant);
+        
+        // var remove_button = document.createElement("button");
+        quant.innerHTML = "<button action=\"remove\">-</button>"
+        quant.innerHTML += "<input type=\"text\" value=\"" + quantity+ "\"class=\"item-quantity\"/>"
+        quant.innerHTML += "<button action=\"add\">+</button>"
+        console.log(li)
+
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("inventory").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+    }
+
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+    </script>
 
     </div>
     
