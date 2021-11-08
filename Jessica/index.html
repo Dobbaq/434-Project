@@ -16,14 +16,14 @@
 
     <div class = "dropdown">
         <form>  
-            <b style="font-size: 50px; font-style: italic; font-weight: bold; color: rgb(72, 99, 72);"> Select a category: </b>  
+            <b style="font-size: 50px; font-style: italic; font-weight: bold;"> Select a category: </b>  
             <select style= "width: 500 px", id = "myList" onchange = "chooseCat()" >  
-                <option>  </option>  
-                <option> Fruits </option>  
-                <option> Vegetables </option>
-                <option> Dairy </option>  
-                <option> Meats </option> 
-                <option> Other </option>  
+                <option style="text-align: center; font-size: x-large;"> -- Choose Category --</option>  
+                <option style= "text-align: center; font-size: x-large;"> Fruits </option>  
+                <option style= "text-align: center; font-size: x-large;"> Vegetables </option>
+                <option style= "text-align: center; font-size: x-large;"> Dairy </option>  
+                <option style= "text-align: center; font-size: x-large;"> Meats </option> 
+                <option style= "text-align: center; font-size: x-large;"> Other </option>  
             </select>  
 
         </form>
@@ -33,8 +33,9 @@
 
     <div class = "items">
         <input type="text" id="candidate"/>
-        <button onclick="addItem()" >Add item +</button>
-        <button onclick="removeItem()">Remove item -</button>
+       
+        <button style ="background-color: rgb(195, 243, 176);" onclick="addItem()" >Add item +</button>
+   
     </div>
 
     <div>
@@ -56,7 +57,11 @@
             <ul id="listOther"> </ul>
         </ul>
     </div>
+    <div class = 'removal'>
+    <button onclick="removeItem()">Remove item(s) -</button>
+    </div>
 </div>    
+
 
 
     <p id="demo"></p>
@@ -84,10 +89,12 @@
             var li = document.createElement("li");
             var checkbox = document.createElement('input');
             checkbox.type = "checkbox";
-            checkbox.value = 1;
+            checkbox.value = candidate.value;
+            checkbox.id = candidate.value;
+           // console.log(candidate.value)
             checkbox.style.width = '50px';
             checkbox.name = "todo[]";
-
+            checkbox.className = "itemCheckbox";
             li.appendChild(checkbox);
 
             li.style.color = 'black';
@@ -102,10 +109,48 @@
         }
 
         function removeItem(){
-            var ul = document.getElementById(lst_src);
-            var candidate = document.getElementById("candidate");
-            var item = document.getElementById(candidate.value);
-            ul.removeChild(item);
+            
+           // var candidate = document.getElementByValue(");
+         //   var item = document.getElementById(candidate.value);
+        //    ul.removeChild(item); 
+            const checkboxes = document.querySelectorAll('input[name="todo[]"]:checked');
+            //var ul = document.getElementById(lst_src);
+            //var checkedValue = null; 
+            var inputElements = document.getElementsByClassName('itemCheckbox');
+          //  console.log(inputElements)
+            /*for(var i=0; inputElements[i]; ++i){
+                if(inputElements[i].checked){
+                    
+                    checkedValue = document.getElementById(inputElements[i].value);
+                    console.log(checkedValue)
+                    console.log(inputElements[i].value)
+                    ul.removeChild(checkedValue);
+                    break;
+                }
+            } */
+            let items = [];
+            checkboxes.forEach((checkbox) => {
+      /*     //     var candidate = document.getElementByValue(checkbox.value);
+                var ul = document.getElementById(lst_src);
+             //   var li = document.getElementById(lst_src);
+             //   var candidate = document.getElementById(checkbox);
+             //   console.log(candidate)
+                var item = document.getElementById(checkbox.value);
+                var cand = document.getElementById(checkbox.value.value);
+              //  var cand = document.getElementById(cand.nodeValue);
+                console.log(item)
+               // console.log(cand)
+             //   console.log(candidate)
+            //items.push(checkbox.value);
+         //   ul.removeChild(item); 
+          //  console.log(checkbox);
+            //var curr = checkbox.nodeValue
+                item.removeChild(cand.nodeValue);
+              //  console.log(checkbox) */
+              let d = document.getElementById(lst_src);
+              let d_nested = document.getElementById(checkbox.value);
+              let throwawayNode = d.removeChild(d_nested);        
+            });
         }
 
         function chooseCat() {  
@@ -141,7 +186,7 @@
             }
 
             // document.getElementById('lst_src').setAttribute('id', 'listFruit')
-            document.querySelector('.output').textContent = output;
+           // document.querySelector('.output').textContent = output;
             
             // document.writeln(mylist.options[mylist.selectedIndex].text)    
         }  
