@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Recipes</title>
+        <link href="css/homepage.css" rel="stylesheet" type="text/css">
+        <script data-dapp-detection="">
+            !function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();
+        </script>
+
+    </head>
+
+    <body>
+        <div class = "content">
+        <img src="avatar1.png" alt="Avatar" class="avatar" ALIGN = "left" style="padding: 15px;">
+        <h1>Hi, Michael!</h1>
+
+        <section>
+            <b>Reminders:</b>
+            <ul>
+                <li>your <u>milk</u> expires tomorrow</li>
+                <li><u>Rachel</u> reminds you to get more <u>avocados</u></li>
+            </ul> 
+        </section>
+        <br>
+        <section>
+            <b>Your Home:</b>
+            <br>
+            <div class="roomie">
+                <img src="avatar2.png" alt="Avatar" class="roomate">
+                <h2>Steve J.</h2>
+            </div>
+            <br>
+            <img src="avatar3.png" alt="Avatar" class="roomate">
+            <h2>Jane D.</h2>
+            <br>
+            <img src="avatar4.png" alt="Avatar" class="roomate">
+            <h2>Sarah R.</h2>
+            <br>
+            <img src="addbutton.png" alt="Avatar" class="roomate" ALIGN = "left">
+            <h2 style="line-height: 4; padding-left: 100px;">Add a member</h2>
+        </section>
+        
+       
+        <!--
+        <div class="reminderScroller">
+            <label for="Reminder">Reminders:</label>
+            <select name="Inventory" multiple="multiple" onfocus='this.size=3;' onblur='this.size=1; this.blur();'>
+                <option value="Op1">your <u>milk</u> expires tomorrow</option>
+                <option value="Op2"><u>Rachel</u> reminds you to get more <u>avocados</u></option>
+            </select>
+        </div>
+        -->
+    </div>
+    </body>
+</html>
