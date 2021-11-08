@@ -10,20 +10,24 @@
     </head>
 
     <body>
-        <div class = "content">
-        <img src="avatar1.png" alt="Avatar" class="avatar" ALIGN = "left" style="padding: 15px;">
-        <h1>Hi, Michael!</h1>
-
-        <section>
+    <div class = "content">
+        
+        <div class = "topbar">
+            <img src="avatar1.png" alt="Avatar" class="avatar" ALIGN = "left" style="padding: 5px;">
+            <h1>Hi, Michael!</h1>
+        </div>
+        <br>
+        <div class="reminders">
             <b>Reminders:</b>
             <ul>
                 <li>your <u>milk</u> expires tomorrow</li>
                 <li><u>Rachel</u> reminds you to get more <u>avocados</u></li>
             </ul> 
-        </section>
+        </div>
         <br>
-        <section>
+        <div class = "yourhome">
             <b>Your Home:</b>
+            <br>
             <br>
             <div class="roomie">
                 <img src="avatar2.png" alt="Avatar" class="roomate">
@@ -38,18 +42,14 @@
             <br>
             <img src="addbutton.png" alt="Avatar" class="roomate" ALIGN = "left">
             <h2 style="line-height: 4; padding-left: 100px;">Add a member</h2>
-        </section>
-        
-       
-        <!--
-        <div class="reminderScroller">
-            <label for="Reminder">Reminders:</label>
-            <select name="Inventory" multiple="multiple" onfocus='this.size=3;' onblur='this.size=1; this.blur();'>
-                <option value="Op1">your <u>milk</u> expires tomorrow</option>
-                <option value="Op2"><u>Rachel</u> reminds you to get more <u>avocados</u></option>
-            </select>
         </div>
-        -->
+        
+    </div>
+    <div class="topnav">
+        <a class = "active" href="#home"><img src=icons/home.png></a>
+        <a href="#inventory"><img src=icons/fridge.png></a>
+        <a href="#recipe gen"><img src=icons/chef.png></a>
+        <a href="#shopping list"><img src=icons/shopping.png></a>
     </div>
     </body>
 </html>
