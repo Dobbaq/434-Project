@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Recipes</title>
+        <title>Home</title>
         <link href="css/homepage.css" rel="stylesheet" type="text/css">
         <script data-dapp-detection="">
             !function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();
@@ -23,8 +23,23 @@
                 <li>your <u>milk</u> expires tomorrow</li>
                 <li><u>Rachel</u> reminds you to get more <u>avocados</u></li>
             </ul> 
+            <ul id="Reminders"></ul>
+            <br>
+            <input type='text' id='user_input' />
+            <input type="button" id="add" value="Add Reminder">
         </div>
         <br>
+        
+        <script>
+            document.getElementById("add").onclick  = function() {
+            var node = document.createElement("Li");
+            var text = document.getElementById("user_input").value; 
+            var textnode=document.createTextNode(text);
+            node.appendChild(textnode);
+            document.getElementById("Reminders").appendChild(node);
+            }
+        </script>
+        
         <div class = "yourhome">
             <b>Your Home:</b>
             <br>
@@ -41,8 +56,14 @@
             <h2>Sarah R.</h2>
             <br>
             <img src="addbutton.png" alt="Avatar" class="roomate" ALIGN = "left">
-            <h2 style="line-height: 4; padding-left: 100px;">Add a member</h2>
+            <h2 style="line-height: 2.5;">&nbsp&nbspAdd a member</h2>
         </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
         
     </div>
     <div class="topnav">
