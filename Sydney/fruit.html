@@ -4,6 +4,7 @@
 <head>
     <title>Inventory</title>
     <link href="css/subpages.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script>
     </script>
     <script
@@ -11,7 +12,8 @@
 </head>
 
 <body>
-    <h1 style="font-family:Inter;">Fruits</h1>
+    <button class="btn"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
+    <h1 style="font-family:Inter;">Fruits and Vegetables</h1>
 
     <form id="form" role="search">
         <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
@@ -21,6 +23,95 @@
             </path>
         </svg></button>
     </form>
+
+    <div class="inventory">
+        <ul id="inventory">
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                  <h4>Apples</h4>
+                  <p><i>purchased: 2 days ago</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" readonly/>
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+      
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                    <h4>Bananas</h4>
+                    <p><i>purchased: 1 day ago</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" />
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+      
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                    <h4>Grapes</h4>
+                    <p><i>purchased: 10 days ago</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" />
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+      
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                    <h4>Peaches</h4>
+                    <p><i>purchased: 5 days ago</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" />
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+      
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                    <h4>Spinach</h4>
+                    <p><i>purchased: 1 day ago</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" />
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+
+    </div>
+    
+  
+      <script src="inventory.js"></script>
 
     
 </body>
