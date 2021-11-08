@@ -5,50 +5,37 @@
     <title>Recipes</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
-    
+
 <body>
     <script>
-            $(window).load(function () {
-            $(".trigger_popup_fricc").click(function () {
-                $('.hover_bkgr_fricc').show();
-            });
-            $('.hover_bkgr_fricc').click(function () {
-                $('.hover_bkgr_fricc').hide();
-            });
-            $('.popupCloseButton').click(function () {
-                $('.hover_bkgr_fricc').hide();
-            });
-        });
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
     </script>
-    <div class="hover_bkgr_fricc">
-        <span class="helper"></span>
-        <div>
-            <div class="popupCloseButton">&times;</div>
-            <p>Add any HTML content<br />inside the popup box!</p>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="popupCloseButton" onclick="togglePopup()">&times;</div>
+            <p1>You lack chicken! Add it to shopping list?</p1>
+            <button class="popupButton" onclick="togglePopup()">Add to Shopping List</button>
         </div>
     </div>
+
+    <button onclick="togglePopup()">click</button>
 
     <h1 style="font-family:Inter;">Recipes</h1>
     <script type="text/javascript">
         function recipePopUp() {
             var input = document.getElementById("search").value;
-            //alert(input);
             if (input == "chicken pizza") {
                 //location.href="suggestion_happy.html";                    
-                location.replace("search.html");
+                togglePopup();
                 return false;
-            }
-            else if (input == "sad") {
-                location.replace("suggestion_sad.html");
-                return false;
-            }
-            else {
-                alert('Invalid Input.');
             }
         }
     </script>
     <div>
-        <form id="form" action="" onsubmit="return recipePopUp()" method="post">
+        <form id="form" action="" onsubmit="return recipePopUp()">
             <input type="text" id="search" placeholder="Search" value="">
             <button class="search"><svg viewBox="0 0 1024 1024">
                     <path class="path1"
@@ -65,7 +52,7 @@
                     <label>Inventory:</label>
                 </td>
                 <td>
-                    <select id="rec_mode" multiple = "multiple" size="3">
+                    <select id="rec_mode" multiple="multiple" size="3">
                     </select>
                 </td>
             </tr>
@@ -97,9 +84,9 @@
             for (v in values) {
                 for (index in recipes) {
                     if (recipes[index].includes(String(values[v]))) {
-                        if(!(result.includes(index))) {
+                        if (!(result.includes(index))) {
                             result.push(index);
-                        }     
+                        }
                     }
                 }
             }
@@ -112,5 +99,6 @@
         <a class="active" href="#recipe gen"><img src=images\icons8-chef-hat-30.png></a>
         <a href="#shopping list"><img src=images\icons8-shopping-cart-32.png></a>
     </div>
-    </body>
-    </html>
+</body>
+
+</html>
