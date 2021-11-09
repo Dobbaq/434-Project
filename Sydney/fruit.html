@@ -172,7 +172,16 @@
 
         if (inputValue === '') {
             alert("You must write something!");
-        } else {
+        } 
+
+        if (inputValue <= 0) {
+            console.log("hi");
+            var list = document.getElementById("inventory");
+            list.removeChild(li);
+
+        }
+        
+        else {
             document.getElementById("inventory").appendChild(li);
         }
         document.getElementById("myInput").value = "";

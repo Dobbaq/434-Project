@@ -1,15 +1,19 @@
-const productOptions = document.querySelectorAll(".product-options");
+const list = document.getElementById("inventory");
+const single = document.querySelectorAll(".single-product")
 
-productOptions.forEach((node) => {
-  const itemCount = node.querySelector(".item-quantity");
-  const add = node.querySelector("button[action='add']");
-  const remove = node.querySelector("button[action='remove']");
+single.forEach((node) => {
+    const itemCount = node.querySelector(".item-quantity");
+    const add = node.querySelector("button[action='add']");
+    const remove = node.querySelector("button[action='remove']");
 
-  add.addEventListener("click", () => {
-    itemCount.value = parseInt(itemCount.value, 10) + 1;
-  });
+    add.addEventListener("click", () => {
+        itemCount.value = parseInt(itemCount.value, 10) + 1;
+      });
 
-  remove.addEventListener("click", () => {
-    itemCount.value = parseInt(itemCount.value, 10) - 1;
-  });
-});
+    remove.addEventListener("click", () => {
+        itemCount.value = parseInt(itemCount.value, 10) - 1;
+        if (itemCount.value <= 0) {
+            list.removeChild(node);
+        }
+      });
+})
