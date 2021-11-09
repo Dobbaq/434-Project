@@ -4,15 +4,15 @@
 <head>
     <title>Inventory</title>
     <link href="css/subpages.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script>
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
         data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
 </head>
 
 <body>
-    <button class="btn" onclick = "window.location.href = 'index.html'"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
+    <div class="content-wrapper">
+        <div class="content">
+            <button class="btn" onclick = "window.location.href = 'inventory.html'"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
     <h1 style="font-family:Inter;">Fruits and Vegetables</h1>
 
     <div class = "search">
@@ -25,6 +25,9 @@
             </svg></button>
         </form>
     </div>
+
+    
+
     
 
     <div class="inventory">
@@ -33,7 +36,7 @@
               <div class="cart-product">
                 <div class="thumb-desc">
                   <h4>Apples</h4>
-                  <p><i>purchased: 2 days ago</i></p>
+                  <p><i>purchased: 11/08/2021</i></p>
                   <p><i>location: fruit basket</i></p>
                 </div>
               </div>
@@ -51,7 +54,7 @@
               <div class="cart-product">
                 <div class="thumb-desc">
                     <h4>Bananas</h4>
-                    <p><i>purchased: 1 day ago</i></p>
+                    <p><i>purchased: 10/02/2021</i></p>
                     <p><i>location: fruit basket</i></p>
                 </div>
               </div>
@@ -69,7 +72,7 @@
               <div class="cart-product">
                 <div class="thumb-desc">
                     <h4>Grapes</h4>
-                    <p><i>purchased: 10 days ago</i></p>
+                    <p><i>purchased: 09/01/2021</i></p>
                     <p><i>location: fridge</i></p>
                 </div>
               </div>
@@ -87,7 +90,7 @@
               <div class="cart-product">
                 <div class="thumb-desc">
                     <h4>Peaches</h4>
-                    <p><i>purchased: 5 days ago</i></p>
+                    <p><i>purchased: 11/01/2021</i></p>
                     <p><i>location: fruit basket</i></p>
                 </div>
               </div>
@@ -100,33 +103,47 @@
                 </div>
               </div>
             </li>
-      
-            <li class="single-product">
-              <div class="cart-product">
-                <div class="thumb-desc">
-                    <h4>Spinach</h4>
-                    <p><i>purchased: 1 day ago</i></p>
-                    <p><i>location: fridge</i></p>
-                </div>
-              </div>
-              <div class="product-options">
-                <div class="item-count">
-                  <button action="remove">-</button>
-                  <input type="text" value="1" class="item-quantity" />
-                  <span class ="infotext"> bag(s) </span>
-                  <button action="add">+</button>
-                </div>
-              </div>
-            </li>
           </ul>
 
-          <div class="addItems">
-                <input type="text" id="myInput" placeholder="Item Name">
-                <input type="text" id="purchased" placeholder ="When Item was Purchased">
-                <input type="text" id="quantity" placeholder ="Quantity of Item">
+        </div>
+        
+
+        </div>
+        
+
+    </div>
+
+    <div class='modal-wrapper'>
+        <div class='modal'>
+          <!-- <button class='modal-toggle modal-button'>×</button> -->
+          <h2 class='modal-title'>Add Item</h2>
+          <div class='modal-content'>
+            <div class="addItems">
+                <span>Item Name:</span><br>
+                <input type="text" id="myInput" placeholder="enter item name" > <br>
+                <span>Purchase Date:</span><br>
+                <input type="text" id="purchased" placeholder="enter date format mm/dd/yyyy"> <br>
+                <span>Location of Item:</span><br>
+                <input type="text" id="location" placeholder="enter location of item in kitchen"><br>
+                <span>Quantity:</span><br>
+                <input type="text" id="quantity" placeholder="enter digit"><br>
+                <span>Unit of Item:</span><br>
+                <input type="text" id="unit" placeholder="enter unit, unit(s) default"><br>
+                <span>
+                    <button onclick="newElement()" id="addBtn" class="addBtn-modal-toggle">Add</span>      
+                             
+                    <button class='cancelBtn-modal-toggle '>Cancel</button>
+                </span>
 
           </div>
-          <button style ="background-color: rgb(195, 243, 176);" onclick="newElement()" class="addBtn">Add</span>
+
+            <!-- <p class='p'>Your Modal Content.</p> -->
+        </div>
+      </div>
+
+
+
+        
 
           
 
@@ -136,6 +153,11 @@
         var inputValue = document.getElementById("myInput").value;
         var purchased = document.getElementById("purchased").value.italics();
         var quantity = document.getElementById("quantity").value;
+        var location = document.getElementById("location").value.italics();
+        var unit = document.getElementById("unit").value;
+        if (unit == ''){
+            unit = "unit(s)"
+        }
 
         var li = document.createElement("li");
         li.className = "single-product"
@@ -156,6 +178,11 @@
         p.innerHTML = "<i>purchased: </i>" + purchased;
         cl2.appendChild(p);
 
+        var loc = document.createElement("p")
+        loc.textContent = "location: ";
+        loc.innerHTML = "<i>location: </i>" + location;
+        cl2.appendChild(loc);
+
         var p_options= document.createElement("div");
         p_options.className = "product-options";
         li.appendChild(p_options);
@@ -163,29 +190,30 @@
         var quant= document.createElement("div");
         quant.className = "item-count";
         p_options.appendChild(quant);
-        
-        // var remove_button = document.createElement("button");
+
         quant.innerHTML = "<button action=\"remove\">-</button>"
         quant.innerHTML += "<input type=\"text\" value=\"" + quantity+ "\"class=\"item-quantity\"/>"
+        quant.innerHTML += "<span class= \"infotext\">" + unit + "</span>"
         quant.innerHTML += "<button action=\"add\">+</button>"
         console.log(li)
 
         if (inputValue === '') {
             alert("You must write something!");
         } 
-
-        if (inputValue <= 0) {
-            console.log("hi");
-            var list = document.getElementById("inventory");
-            list.removeChild(li);
-
-        }
+        
         
         else {
             document.getElementById("inventory").appendChild(li);
         }
+        
         document.getElementById("myInput").value = "";
+        document.getElementById("purchased").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("location").value = "";
+        document.getElementById("unit").value = "";
         }
+
+        // Get the modal
 
     </script>
 
@@ -194,7 +222,34 @@
   
       <script src="inventory.js"></script>
 
-    
+      <button class='add-modal-toggle'>+</button>
+
+      <script>
+        const contentWrapper = document.querySelector('.content-wrapper');
+        const modalWrapper = document.querySelector('.modal-wrapper');
+        const modalButtons = document.querySelectorAll('.add-modal-toggle');
+
+        const cancelBtn = document.querySelector('.cancelBtn-modal-toggle');
+        const addBtn = document.querySelector('.addBtn-modal-toggle');
+
+             
+        modalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+        })
+
+        addBtn.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+        })
+    </script>
 </body>
 
 </html>
