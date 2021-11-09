@@ -121,32 +121,13 @@
           </ul>
 
           <div class="addItems">
-              <!-- <form action ="/" class="form-container">
-                <h1>Add New Item</h1>
-                <label for="item"><b>Item Name</b></label>
-                <input type="text" id="myInput" placeholder="Item Name">
-
-                <label for="date"><b>Purchased:</b></label>
-                <input type="text" id="purchased" placeholder ="When Item was Purchased">
-
-                <label for="quantity"><b>Quantity</b></label>
-                <input type="text" id="quantity" placeholder ="Quantity of Item">
-
-                <label for="placed"><b>Location in Kitchen</b></label>
-                <input type="text" id="location" placeholder = "Location of Item">
-
-                <button type="submit" onclick="newElement()" class="addBtn">Add Item</button>
-            </form> -->
-
-
-
                 <input type="text" id="myInput" placeholder="Item Name">
                 <input type="text" id="purchased" placeholder ="When Item was Purchased">
                 <input type="text" id="quantity" placeholder ="Quantity of Item">
-                <span onclick="newElement()" class="addBtn">Add</span>
-
 
           </div>
+          <button style ="background-color: rgb(195, 243, 176);" onclick="newElement()" class="addBtn">Add</span>
+
           
 
     <script>
@@ -195,14 +176,6 @@
             document.getElementById("inventory").appendChild(li);
         }
         document.getElementById("myInput").value = "";
-    }
-
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
         }
 
     </script>
