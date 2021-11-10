@@ -4,6 +4,7 @@
 <head>
     <title>Inventory</title>
     <link href="css/subpages.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
         data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
@@ -12,8 +13,9 @@
 <body>
     <div class="content-wrapper">
         <div class="content">
-            <button class="btn" onclick = "window.location.href = 'inventory.html'"><i class="fas fa-arrow-left"></i>Back to Inventory</button>
-    <h1 style="font-family:Inter;">Fruits and Vegetables</h1>
+            <button class="btn" onclick = "window.location.href = 'inventory.html'"><i class="fas fa-arrow-left"></i></button>
+    <h1 style="font-family:Inter;">Fruits &amp<br> Vegetables</h1>
+    <!-- <div id="rectangle"><img src="images/fgbackground.jpeg"/></div> -->
 
     <div class = "search">
         <form id="form" role="search">
@@ -25,10 +27,6 @@
             </svg></button>
         </form>
     </div>
-
-    
-
-    
 
     <div class="inventory">
         <ul id="inventory">
@@ -139,13 +137,7 @@
 
             <!-- <p class='p'>Your Modal Content.</p> -->
         </div>
-      </div>
-
-
-
-        
-
-          
+      </div>   
 
     <script>
     function newElement() {
@@ -222,7 +214,7 @@
   
       <script src="inventory.js"></script>
 
-      <button class='add-modal-toggle'>+</button>
+      <button class='add-modal-toggle'><i class="fas fa-plus"></i></button>
 
       <script>
         const contentWrapper = document.querySelector('.content-wrapper');
