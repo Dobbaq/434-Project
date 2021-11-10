@@ -28,6 +28,19 @@
   border: 6px solid #A9D7CD;
 }
 
+.addB {
+  padding-left: 3px;
+  padding-right: 3px;
+  background: #A9D7CD;
+}
+
+
+.delB {
+padding-left: 3px; 
+padding-right: 3px;
+background: #d7a9b3;
+}
+
 .yourhome {
   padding: 10px;
   border: 6px solid #A9D7CD;

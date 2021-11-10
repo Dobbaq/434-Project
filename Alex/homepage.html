@@ -26,17 +26,25 @@
             <ul id="Reminders"></ul>
             <br>
             <input type='text' id='user_input' />
-            <input type="button" id="add" value="Add Reminder">
+            <input type="button" id="add" value="Add Reminder" class="addB">
+            <input type="button" id="remove" value="Delete Reminder" class="delB">
         </div>
         <br>
         
         <script>
-            document.getElementById("add").onclick  = function() {
-            var node = document.createElement("Li");
-            var text = document.getElementById("user_input").value; 
-            var textnode=document.createTextNode(text);
-            node.appendChild(textnode);
-            document.getElementById("Reminders").appendChild(node);
+            document.getElementById("add").onclick = function () {
+                var node = document.createElement("Li");
+                var text = document.getElementById("user_input").value;
+                var textnode = document.createTextNode(text);
+                node.setAttribute('id', text);
+                node.appendChild(textnode);
+                document.getElementById("Reminders").appendChild(node);
+            }
+            document.getElementById("remove").onclick = function () {
+                var a = document.getElementById("Reminders");
+                var candidate = document.getElementById("user_input");
+                var item = document.getElementById(candidate.value);
+                a.removeChild(item);
             }
         </script>
         
