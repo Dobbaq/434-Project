@@ -14,8 +14,17 @@
     height:100px;
     text-align: center;
     font-family: 'Inter';
+    -webkit-filter: blur(0);
+          filter: blur(0);
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease, -webkit-filter 500ms ease;
+  transition: opacity 500ms ease, -webkit-filter 500ms ease;
+  transition: filter 500ms ease, opacity 500ms ease;
+  transition: filter 500ms ease, opacity 500ms ease, -webkit-filter 500ms ease;
     
   }
+
+
 
   #rectangle {
     position: relative;
@@ -27,14 +36,14 @@
     height: 475%;
     background-color: #f0ede6;
   }
+
+  .container {
+    position: relative;
+  }
   
 
-  /* ul {
-    background: #5f56d5;
-    padding: 15px 15px 15px 5px;
-    } */
-
     ul {
+        
         list-style-type: none;
         padding-top:50px;
         text-align: left;
@@ -48,9 +57,7 @@
         font-size: 20px;
     }
 
-    img {
-        opacity: 0.3;
-    }
+    
     #candidate {
         width:320px; 
         height: 70px;  
@@ -63,7 +70,9 @@
         background: #A9D7CD;
         margin: 0;
         width: 100%;
-        height: 100vh;
+        height: 60%;
+        overflow-y: auto;
+       max-height: 50px;
       }
 
       
@@ -76,8 +85,9 @@
 
     .removal {
         text-align: right;
-        padding-top: 100px;
+      
         padding-right: 100px;
+        padding-bottom: 30%;
         
     }
 
@@ -88,8 +98,9 @@
         background-color: rgb(238, 102, 102);
         opacity: 0.8;
         font-size: 35px;
+      
     }
-   
+    
 
     .dropdown > form > select option{
         width:150px;  
@@ -103,6 +114,10 @@
         padding-bottom:100px;
     }
 
+  /*  .input { s
+        padding-right:100px;
+    } */
+
     .dropdown {
         padding-top:-100px;
         
@@ -111,10 +126,11 @@
     .topnav {
         background-color: white;
         overflow: hidden;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 10%;
         top: 90%;
+        
       }
       
       /* Style the links inside the navigation bar */
@@ -124,6 +140,7 @@
         padding: 47px 72px;
         text-decoration: none;
         font-size: 70px;
+        
       }
       
       /* Change the color of links on hover */
@@ -144,5 +161,6 @@
   /*  li {
         font-weight: bold;
     } */
+
 
    
