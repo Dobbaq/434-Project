@@ -56,6 +56,7 @@ p1 {
 
 .popup .content {
   position: absolute;
+  border-radius: 25px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%) scale(0);
@@ -225,7 +226,6 @@ p {
   top: 90%;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: black;
@@ -234,13 +234,11 @@ p {
   font-size: 70px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: #A9D7CD;
 }
