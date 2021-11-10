@@ -37,6 +37,13 @@ h1 {
     background: white;
   }
 
+  .legend_icons {
+    position:fixed;
+    font-size: 30px;
+    top:380px;
+    left: 70px;
+
+  }
   
   .inventory input {
       font-size: 100%;

@@ -28,12 +28,20 @@
         </form>
     </div>
 
+    <div class="legend_icons">
+        <span>
+            <p><i class="far fa-clock" style="color:#3006c7"></i> : Expiring Soon</p>
+            <p><i class="fas fa-exclamation-circle" style="color:#c70620"></i> : Item Quantity Low</p>
+            
+        </span>
+    </div>
+
     <div class="inventory">
         <ul id="inventory">
             <li class="single-product">
               <div class="cart-product">
                 <div class="thumb-desc">
-                  <h4>Apples</h4>
+                  <h4>Apples<i class="fas fa-exclamation-circle" style="color:#c70620"></i></h4>
                   <p><i>purchased: 11/08/2021</i></p>
                   <p><i>location: fruit basket</i></p>
                 </div>
@@ -41,7 +49,7 @@
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
-                  <input type="text" value="1" class="item-quantity" readonly/>
+                  <input type="text" value="2" class="item-quantity" readonly/>
                   <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
@@ -51,7 +59,7 @@
             <li class="single-product">
               <div class="cart-product">
                 <div class="thumb-desc">
-                    <h4>Bananas</h4>
+                    <h4>Bananas<i class="far fa-clock" style="color:#3006c7"></i></h4>
                     <p><i>purchased: 10/02/2021</i></p>
                     <p><i>location: fruit basket</i></p>
                 </div>
@@ -59,7 +67,7 @@
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
-                  <input type="text" value="1" class="item-quantity" />
+                  <input type="text" value="4" class="item-quantity" />
                   <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
@@ -69,7 +77,7 @@
             <li class="single-product">
               <div class="cart-product">
                 <div class="thumb-desc">
-                    <h4>Grapes</h4>
+                    <h4>Grapes<i class="fas fa-exclamation-circle" style="color:#c70620"></i> <i class="far fa-clock" style="color:#3006c7"></i></h4>
                     <p><i>purchased: 09/01/2021</i></p>
                     <p><i>location: fridge</i></p>
                 </div>
@@ -95,7 +103,7 @@
               <div class="product-options">
                 <div class="item-count">
                   <button action="remove">-</button>
-                  <input type="text" value="1" class="item-quantity" />
+                  <input type="text" value="6" class="item-quantity" />
                   <span class ="infotext"> unit(s) </span>
                   <button action="add">+</button>
                 </div>
