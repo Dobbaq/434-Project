@@ -76,10 +76,10 @@
               </div>
               <div class="product-options">
                 <div class="item-count">
-                  <button action="remove">-</button>
+                  <button id="addbtn" action="remove">-</button>
                   <input type="text" value="1" class="item-quantity" />
                   <span class ="infotext"> bag(s) </span>
-                  <button action="add">+</button>
+                  <button id = "addbtn" action="add">+</button>
                 </div>
               </div>
             </li>
@@ -141,7 +141,6 @@
 
     <script>
     function newElement() {
-
         var inputValue = document.getElementById("myInput").value;
         var purchased = document.getElementById("purchased").value.italics();
         var quantity = document.getElementById("quantity").value;
@@ -183,19 +182,30 @@
         quant.className = "item-count";
         p_options.appendChild(quant);
 
-        quant.innerHTML = "<button action=\"remove\">-</button>"
-        quant.innerHTML += "<input type=\"text\" value=\"" + quantity+ "\"class=\"item-quantity\"/>"
+        quant.innerHTML = "<button id=\"removebtn\" action=\"remove\">-</button>"
+        quant.innerHTML += "<input type=\"text\" value=" + "\"" + parseInt(quantity)+ "\"" + "class=\"item-quantity\"/>"
         quant.innerHTML += "<span class= \"infotext\">" + unit + "</span>"
-        quant.innerHTML += "<button action=\"add\">+</button>"
+        quant.innerHTML += "<button id=\"addbtn\" action=\"add\">+</button>"
         console.log(li)
 
         if (inputValue === '') {
             alert("You must write something!");
         } 
+
+        const addEvent = (id, event = 'click') => {
+            console.log("hi")
+            document.getElementById(id).addEventListener(event, function() {
+                var quantity = document.getElementById("quantity");
+                itemCount.value = parseInt(itemCount.value, 10) + 1;
+            });
+        }
         
         
-        else {
+        if (inputValue) {
             document.getElementById("inventory").appendChild(li);
+            var l = document.getElementById("inventory");
+            addEvent("addbtn");
+            console.log(l);
         }
         
         document.getElementById("myInput").value = "";
@@ -204,6 +214,8 @@
         document.getElementById("location").value = "";
         document.getElementById("unit").value = "";
         }
+
+        
 
         // Get the modal
 

@@ -7,6 +7,7 @@ single.forEach((node) => {
     const remove = node.querySelector("button[action='remove']");
 
     add.addEventListener("click", () => {
+        console.log("hi")
         itemCount.value = parseInt(itemCount.value, 10) + 1;
       });
 
@@ -16,4 +17,6 @@ single.forEach((node) => {
             list.removeChild(node);
         }
       });
+
 })
+

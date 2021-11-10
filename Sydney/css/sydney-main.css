@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#rectangle {
+    position: relative;
+    z-index: -1;
+    opacity: 80%;
+    -webkit-transform: translate(0%, -85%);
+            transform: translate(0%, -85%);
+    width: 100%;
+    height: 20%;
+    background-color: #f0ede6;
+  }
+
+.fruitpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 13%;
+    top: 16%;
+    height:200px;
+    width: 250px
+
+}
+
+.meatpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 62%;
+    top: 17%;
+    height:200px;
+    width: 250px
+}
+
+.bakerypic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 63%;
+    top: 41%;
+    height:200px;
+    width: 250px
+}
+
+.oilpic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 13%;
+    top: 41%;
+    height:200px;
+    width: 250px
+}
+
+.dairypic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 11%;
+    top: 67%;
+    height:200px;
+    width: 250px
+}
+
+.beveragespic {
+    display: relative;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 63%;
+    top: 67%;
+    height:200px;
+    width: 250px
+}
+
+
+.fruit {
+    display: flex;
+    background-color: white;
+    opacity:0.4;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    left: 5%;
+    top: 15%;
+    font-size: 45px;
+    height: 350px;
+    width: 400px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.meatandfish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    opacity: 0.4;
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 15%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.bakery {
+    display: flex;
+    opacity: 0.4;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 40%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.oils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 40%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+.dairy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 5%;
+    top: 65%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+.beverages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.4;
+    background-color:white;
+    position: absolute;
+    margin: auto;
+    left: 55%;
+    top: 65%;
+    height: 350px;
+    width: 400px;
+    font-size: 45px;
+    color: black;
+    border: 8px solid rgb(72, 99, 72);
+    padding-top: 200px;
+    border-radius: 50px;
+}
+
+
+
+h1 {
+    position: relative;
+    top: 1%;
+    font-size: 800%;
+    text-align: center;
+  }
+  
+  body {
+    background: #A9D7CD;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .topnav {
+    background-color: white;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 90%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: black;
+    padding: 47px 72px;
+    text-decoration: none;
+    font-size: 70px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #A9D7CD;
+  }
+  
+  .topnav img {
+    background-color: white;
+    background: white;
+  }
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
