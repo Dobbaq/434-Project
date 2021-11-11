@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inventory</title>
+    <link href="css/subpages.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+        data-dapp-detection="">!function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();</script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="content">
+            <button class="btn" onclick = "window.location.href = 'inventory.html'"><i class="fas fa-arrow-left"></i></button>
+    <h1 style="font-family:Inter;">Dairy &amp Eggs</h1>
+    <!-- <div id="rectangle"><img src="images/fgbackground.jpeg"/></div> -->
+
+    <div class = "search">
+        <form id="form" role="search">
+            <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
+            <button class="search"><svg viewBox="0 0 1024 1024">
+                <path class="path1"
+                    d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                </path>
+            </svg></button>
+        </form>
+    </div>
+
+    <div class="inventory">
+        <ul id="inventory">
+            <li class="single-product">
+              <div class="cart-product">
+                <div class="thumb-desc">
+                  <h4>Eggs</h4>
+                  <p><i>purchased: 11/08/2021</i></p>
+                  <p><i>location: fridge</i></p>
+                </div>
+              </div>
+              <div class="product-options">
+                <div class="item-count">
+                  <button action="remove">-</button>
+                  <input type="text" value="1" class="item-quantity" readonly/>
+                  <span class ="infotext"> carton(s) </span>
+                  <button action="add">+</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        
+
+        </div>
+        
+
+    </div>
+
+    <div class='modal-wrapper'>
+        <div class='modal'>
+          <!-- <button class='modal-toggle modal-button'>×</button> -->
+          <h2 class='modal-title'>Add Item</h2>
+          <div class='modal-content'>
+            <div class="addItems">
+                <span>Item Name:</span><br>
+                <input type="text" id="myInput" placeholder="enter item name" > <br>
+                <span>Purchase Date:</span><br>
+                <input type="text" id="purchased" placeholder="enter date format mm/dd/yyyy"> <br>
+                <span>Location of Item:</span><br>
+                <input type="text" id="location" placeholder="enter location of item in kitchen"><br>
+                <span>Quantity:</span><br>
+                <input type="text" id="quantity" placeholder="enter digit"><br>
+                <span>Unit of Item:</span><br>
+                <input type="text" id="unit" placeholder="enter unit, unit(s) default"><br>
+                <span>
+                    <button onclick="newElement()" id="addBtn" class="addBtn-modal-toggle">Add</span>      
+                             
+                    <button class='cancelBtn-modal-toggle '>Cancel</button>
+                </span>
+
+          </div>
+
+            <!-- <p class='p'>Your Modal Content.</p> -->
+        </div>
+      </div>   
+
+    <script>
+    function newElement() {
+
+        var inputValue = document.getElementById("myInput").value;
+        var purchased = document.getElementById("purchased").value.italics();
+        var quantity = document.getElementById("quantity").value;
+        var location = document.getElementById("location").value.italics();
+        var unit = document.getElementById("unit").value;
+        if (unit == ''){
+            unit = "unit(s)"
+        }
+
+        var li = document.createElement("li");
+        li.className = "single-product"
+        var cl1 = document.createElement("div");
+        cl1.className = "cart-product";
+        li.appendChild(cl1);
+
+        var cl2 = document.createElement("div")
+        cl2.className="thumb-desc";
+        cl1.appendChild(cl2);
+
+        var header = document.createElement("h4");
+        header.textContent = inputValue;
+        cl2.appendChild(header);
+
+        var p = document.createElement("p")
+        p.textContent = "purchased: ";
+        p.innerHTML = "<i>purchased: </i>" + purchased;
+        cl2.appendChild(p);
+
+        var loc = document.createElement("p")
+        loc.textContent = "location: ";
+        loc.innerHTML = "<i>location: </i>" + location;
+        cl2.appendChild(loc);
+
+        var p_options= document.createElement("div");
+        p_options.className = "product-options";
+        li.appendChild(p_options);
+
+        var quant= document.createElement("div");
+        quant.className = "item-count";
+        p_options.appendChild(quant);
+
+        quant.innerHTML = "<button action=\"remove\">-</button>"
+        quant.innerHTML += "<input type=\"text\" value=\"" + quantity+ "\"class=\"item-quantity\"/>"
+        quant.innerHTML += "<span class= \"infotext\">" + unit + "</span>"
+        quant.innerHTML += "<button action=\"add\">+</button>"
+        console.log(li)
+
+        if (inputValue === '') {
+            alert("You must write something!");
+        } 
+        
+        
+        else {
+            document.getElementById("inventory").appendChild(li);
+        }
+        
+        document.getElementById("myInput").value = "";
+        document.getElementById("purchased").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("location").value = "";
+        document.getElementById("unit").value = "";
+        }
+
+        // Get the modal
+
+    </script>
+
+    </div>
+    
+  
+      <script src="inventory.js"></script>
+
+      <button class='add-modal-toggle'><i class="fas fa-plus"></i></button>
+
+      <script>
+        const contentWrapper = document.querySelector('.content-wrapper');
+        const modalWrapper = document.querySelector('.modal-wrapper');
+        const modalButtons = document.querySelectorAll('.add-modal-toggle');
+
+        const cancelBtn = document.querySelector('.cancelBtn-modal-toggle');
+        const addBtn = document.querySelector('.addBtn-modal-toggle');
+
+             
+        modalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+        })
+
+        addBtn.addEventListener('click', () => {
+            contentWrapper.classList.toggle('modal--active');
+            modalWrapper.classList.toggle('modal--active');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+.content {
+    padding-top: 5%;
+    height:100px;
+    text-align: center;
+    font-family: 'Inter';
+    -webkit-filter: blur(0);
+          filter: blur(0);
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease, -webkit-filter 500ms ease;
+  transition: opacity 500ms ease, -webkit-filter 500ms ease;
+  transition: filter 500ms ease, opacity 500ms ease;
+  transition: filter 500ms ease, opacity 500ms ease, -webkit-filter 500ms ease;
+    
+  }
+
+  .modal--active .content {
+    -webkit-filter: blur(8px);
+            filter: blur(8px);
+    opacity: 1;
+  }
+
+  #rectangle {
+    position: relative;
+    z-index: -1;
+    opacity: 80%;
+    -webkit-transform: translate(0%, -85%);
+            transform: translate(0%, -85%);
+    width: 100%;
+    height: 475%;
+    background-color: #f0ede6;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .modal-wrapper {
+    position: fixed;
+    top: 100vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    opacity: .01;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    overflow: auto;
+    -webkit-transition: opacity 300ms ease 200ms, -webkit-transform 300ms ease 200ms, -webkit-filter 300ms ease 200ms;
+    transition: opacity 300ms ease 200ms, -webkit-transform 300ms ease 200ms, -webkit-filter 300ms ease 200ms;
+    transition: transform 300ms ease 200ms, filter 300ms ease 200ms, opacity 300ms ease 200ms;
+    transition: transform 300ms ease 200ms, filter 300ms ease 200ms, opacity 300ms ease 200ms, -webkit-transform 300ms ease 200ms, -webkit-filter 300ms ease 200ms;
+  }
+  .modal-wrapper.modal--active {
+    top: 300px;
+    margin-top: -150px;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  .modal {
+    position: relative;
+    background: #fff;
+    padding: 80px 20px 20px;
+    overflow: hidden;
+    height: 300px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+  }
+
+  .modal-title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  
+  .modal-content p{
+    color: #333;
+  }
+
+  .modal-button {
+    background: #e20540;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  #plus {
+    transform: scale(0.5);
+    width: 45px;
+  }
+
+  #minus {
+    transform: scale(0.5);
+    width: 50px;
+  }
+
+  #input {
+    width: 40px;
+    height: 40px;
+  }
+
+  .quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+    ul {
+        
+        list-style-type: none;
+        padding-top:50px;
+        text-align: left;
+        padding-left:100px;
+     
+    }
+
+    #myList{
+        width:320px; 
+        height: 70px;  
+        font-size: 20px;
+    }
+
+    
+    #candidate {
+        width:320px; 
+        height: 70px;  
+        padding-right: 100px;
+        text-align: left;
+        font-size: 40px;
+    }
+
+    body {
+        background: #A9D7CD;
+        margin: 0;
+        width: 100%;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+       max-height: 50px;
+      }
+
+      
+
+    button {
+        width:270px; 
+        height: 70px;  
+        font-size: 30px;
+    }
+
+    .removal {
+        text-align: right;
+      
+        padding-right: 100px;
+        padding-bottom: 30%;
+        
+    }
+
+   
+    .removal > button {
+        width: 315px;
+        height: 90px;  
+        background-color: rgb(238, 102, 102);
+        opacity: 0.8;
+        font-size: 35px;
+      
+    }
+    
+
+    .dropdown > form > select option{
+        width:150px;  
+        font-size: 200px; 
+    }
+
+    .items {
+        padding-top:100px;
+        padding-right:100px;
+        text-align: right;
+        padding-bottom:100px;
+    }
+
+  /*  .input { s
+        padding-right:100px;
+    } */
+
+    .dropdown {
+        padding-top:-100px;
+        
+    }
+
+    .topnav {
+        background-color: white;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 10%;
+        top: 90%;
+        
+      }
+      
+      /* Style the links inside the navigation bar */
+      .topnav a {
+        float: left;
+        color: black;
+        padding: 47px 72px;
+        text-decoration: none;
+        font-size: 70px;
+        
+      }
+      
+      /* Change the color of links on hover */
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      /* Add a color to the active/current link */
+      .topnav a.active {
+        background-color: #A9D7CD;
+      }
+ /*   ul > li > ul ::before {
+
+        padding-top:50px;
+    } */
+
+  /*  li {
+        font-weight: bold;
+    } */
+
+
+   
