@@ -59,32 +59,30 @@
         <li style = "font-weight: bold; font-size:300%; color: white; border:3px; background: rgb(72, 99, 72); border-style:solid; border-color:white; width: 780px; height: 100px;
         box-sizing: border-box; padding: 20px; opacity: 0.6;" >Beverages</li>
             <ul id="listBevs"> </ul>
-        </ul>
+        </ul>  
     </div>
+
     <div class = 'removal'>
-    <button onclick="removeItem()">Remove item(s) -</button>
+    <button onclick="removeItem()">Remove Selected Item</button>
     </div>
     </div>
     </div>
-    
+   
 </div>    
 
 
 
     <p id="demo"></p>
     <script>
+
         function myFunction() {
             document.getElementById("demo").innerHTML = "I dont work :)";
             var thisOptionValue = [];
             $('select[name="Inventory"]').each(function () { thisOptionValue = $(this).val(); });
         }
-        /* <p id = "test option">
-    The value of the option selected is:
-    <span class="output"></span>
-</p>
-*/
-
         // var stringArray = ["Fruits","Dairy","Meat"];     
+
+        
 
         function addItem(){
             if (lst_src == 'listVeggies') {
@@ -94,7 +92,12 @@
             var ul = document.getElementById(lst_src);
             var candidate = document.getElementById("candidate");
             var li = document.createElement("li");
+       
             var checkbox = document.createElement('input');
+            var quantReal = document.createElement("form");
+            var lbl = document.createElement("label");
+            var quantNum = document.createElement("input");
+
             checkbox.type = "checkbox";
             checkbox.value = candidate.value;
             checkbox.id = candidate.value;
@@ -102,73 +105,66 @@
             checkbox.style.width = '50px';
             checkbox.name = "todo[]";
             checkbox.className = "itemCheckbox";
-            li.appendChild(checkbox);
 
+          
+            quantReal.action = "/action_page.php";
+            lbl.innerHTML="<label for=\"add\">Quantity: </label>"
+            quantNum.type = "number";
+            quantNum.id = "quantity";
+            quantNum.name = "quantity";
+            quantNum.min = "0";
+            quantNum.max = "100";
+            quantNum.step = "1";
+            quantNum.value = "1";
+            quantNum.style.scale = "2";
+
+            quantReal.appendChild(lbl);
+            quantReal.appendChild(quantNum);
+            quantReal.style.display = "inline-block";
+            quantReal.style.float = "right";
+            quantReal.style.paddingRight = "100px";
+            quantReal.style.color = "#E97618";
+            quantReal.style.fontStyle = "italic";
+
+            li.appendChild(checkbox);
+        
             li.style.color = 'black';
             li.style.fontSize = '40px';
-            
-          //  li.style.paddingTop = '2';
-           // li.style.fontWeight = 'none';
-           // li.setAttribute('id',candidate.value);
+       
             li.appendChild(document.createTextNode(candidate.value));
+          //  li.append(btnMin);
+           
+          //  li.append(quant);
+            li.append(quantReal);
            // li.style.paddingTop = "50%";
+           
             ul.appendChild(li);
+            
+
+    
         }
 
         function removeItem(){
             
-           // var candidate = document.getElementByValue(");
-         //   var item = document.getElementById(candidate.value);
-        //    ul.removeChild(item); 
             const checkboxes = document.querySelectorAll('input[name="todo[]"]:checked');
             //var ul = document.getElementById(lst_src);
             //var checkedValue = null; 
             var inputElements = document.getElementsByClassName('itemCheckbox');
-          //  console.log(inputElements)
-            /*for(var i=0; inputElements[i]; ++i){
-                if(inputElements[i].checked){
-                    
-                    checkedValue = document.getElementById(inputElements[i].value);
-                    console.log(checkedValue)
-                    console.log(inputElements[i].value)
-                    ul.removeChild(checkedValue);
-                    break;
-                }
-            } */
             let items = [];
             checkboxes.forEach((checkbox) => {
-      /*     //     var candidate = document.getElementByValue(checkbox.value);
-                var ul = document.getElementById(lst_src);
-             //   var li = document.getElementById(lst_src);
-             //   var candidate = document.getElementById(checkbox);
-             //   console.log(candidate)
-                var item = document.getElementById(checkbox.value);
-                var cand = document.getElementById(checkbox.value.value);
-              //  var cand = document.getElementById(cand.nodeValue);
-                console.log(item)
-               // console.log(cand)
-             //   console.log(candidate)
-            //items.push(checkbox.value);
-         //   ul.removeChild(item); 
-          //  console.log(checkbox);
-            //var curr = checkbox.nodeValue
-                item.removeChild(cand.nodeValue);
-              //  console.log(checkbox) */
+
               let d = document.getElementById(lst_src);
-              let d_nested = document.getElementById(checkbox.value);
-              let throwawayNode = d.removeChild(d_nested);        
+             // console.log(d)
+             
+              d.removeChild(checkbox.parentNode)
+            //  let d_nested = document.getElementById(checkbox.value);
+            //  let throwawayNode = d.removeChild(d_nested);        
             });
         }
 
         function chooseCat() {  
             var mylist = document.getElementById("myList");  
 
-           /* var fruit = document.getElementById("list_fruit");
-            var veggie = document.getElementById("Vegetables");
-            var dairy = document.getElementById("Dairy");
-            var meat = document.getElementById("Meat");
-            var other = document.getElementById("Other"); */
-            // document.getElementById("category").value = mylist.options[mylist.selectedIndex].text;
             selectElement = 
                     document.querySelector('#myList');
             // output = document.getElementById("category").value;
@@ -201,6 +197,8 @@
             // document.writeln(mylist.options[mylist.selectedIndex].text)    
         }  
     </script>
+
+
     <div class="topnav">
         <a href="/Alex/homepage.html"><img src=images\images\icons8-home-24.png></a>
         <a href="/Sydney/index.html"><img src=images\images\icons8-fridge-24.png></a>
