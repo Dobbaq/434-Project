@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Home</title>
-        <link href="css/homepage.css" rel="stylesheet" type="text/css">
-        <script data-dapp-detection="">
-            !function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();
-        </script>
 
-    </head>
+<head>
+    <title>Home</title>
+    <link href="css/homepage.css" rel="stylesheet" type="text/css">
+    <script data-dapp-detection="">
+        !function () { let e = !1; function n() { if (!e) { const n = document.createElement("meta"); n.name = "dapp-detected", document.head.appendChild(n), e = !0 } } if (window.hasOwnProperty("ethereum")) { if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return; n() } else { var t = window.ethereum; Object.defineProperty(window, "ethereum", { configurable: !0, enumerable: !1, set: function (e) { window.__disableDappDetectionInsertion || n(), t = e }, get: function () { if (!window.__disableDappDetectionInsertion) { const e = arguments.callee; e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n() } return t } }) } }();
+    </script>
 
-    <body>
-    <div class = "content">
-        
-        <div class = "topbar">
-            <img src="avatar1.png" alt="Avatar" class="avatar" ALIGN = "left" style="padding: 5px;">
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="topbar">
+            <img src="avatar1.png" alt="Avatar" class="avatar" ALIGN="left" style="padding: 5px;">
             <h1>Hi, Michael!</h1>
         </div>
         <br>
@@ -22,7 +23,7 @@
             <ul>
                 <li>your <u>milk</u> expires tomorrow</li>
                 <li><u>Rachel</u> reminds you to get more <u>avocados</u></li>
-            </ul> 
+            </ul>
             <ul id="Reminders"></ul>
             <br>
             <input type='text' id='user_input' />
@@ -30,7 +31,7 @@
             <input type="button" id="remove" value="Delete Reminder" class="delB">
         </div>
         <br>
-        
+
         <script>
             document.getElementById("add").onclick = function () {
                 var node = document.createElement("Li");
@@ -47,8 +48,8 @@
                 a.removeChild(item);
             }
         </script>
-        
-        <div class = "yourhome">
+
+        <div class="yourhome">
             <b>Your Home:</b>
             <br>
             <br>
@@ -63,22 +64,52 @@
             <img src="avatar4.png" alt="Avatar" class="roomate">
             <h2>Sarah R.</h2>
             <br>
-            <img src="addbutton.png" alt="Avatar" class="roomate" ALIGN = "left">
-            <h2 style="line-height: 2.5;">&nbsp&nbspAdd a member</h2>
+            <ul class="Home" id="Home"></ul>
+            <div class="aligned">
+                <input type="image" src="addbutton.png" name="saveForm" class="roomate" id="saveForm" ALIGN="left"
+                    style="width: 100px;height: 100px;border-radius: 50%;" />
+                <input type="text" id="myInput" placeholder="Add a member" style="vertical-align: middle;">
+            </div>
+            
+
+            <script>
+                document.getElementById("saveForm").onclick = function () {
+                    var node = document.createElement("Li");
+                    var profilePic = document.createElement('img')
+                    profilePic.src = 'default-avatar.png'
+                    var linebreak = document.createElement('br');
+                    var text = document.getElementById("myInput").value;
+                    var textnode = document.createTextNode(text);
+                    node.setAttribute('id', text);
+                    node.appendChild(profilePic)
+                    node.appendChild(linebreak)
+                    node.appendChild(textnode);
+                    
+                    
+                    if (text === '') {
+                        alert("You must write something!");
+                    }
+                    else {
+                        document.getElementById("Home").appendChild(node);
+                    }
+                }
+            </script>
+           
         </div>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
     </div>
     <div class="topnav">
-        <a class = "active" href="homepage.html"><img id="home" style="height:70%"src=icons\home.png></a>
-        <a href="/Sydney/inventory.html"><img id="fridge" style="height:50%;" src=icons\fridge.png></a>
-        <a href="/Jake/recipes.html"><img id="chef" style="height:40%;" src=icons\chef.png></a>
-        <a href="/Jessica/index.html"><img id="shopping"src=icons\shopping.png></a>
+        <a class="active" href="homepage.html"><img id="home" style="height:70%" src=icons\home.png></a>
+        <a href="../Sydney/inventory.html"><img id="fridge" style="height:50%;" src=icons\fridge.png></a>
+        <a href="../Jake/recipes.html"><img id="chef" style="height:40%;" src=icons\chef.png></a>
+        <a href="../Jessica/index.html"><img id="shopping" src=icons\shopping.png></a>
     </div>
-    </body>
+</body>
+
 </html>
